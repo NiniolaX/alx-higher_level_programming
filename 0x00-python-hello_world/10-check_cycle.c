@@ -1,0 +1,21 @@
+#include "lists.h"
+
+/**
+ * check_cycle - Checks if a singly linked list has a cycle in it
+ * @list: Head of list
+ * Return: 0 if there is no cycle, 1 if there is
+ */
+int check_cycle(listint_t *list)
+{
+	listint_t *ptr = list, *temp = list;
+
+	while (ptr->next)
+	{
+		/* ptr hits a previously traversed head node */
+		if (ptr->next == temp)
+			return (1);
+		ptr = ptr->next;
+	}
+	/* Loop terminates indicating no cycle */
+	return (0);
+}
