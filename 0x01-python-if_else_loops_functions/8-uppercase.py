@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def uppercase(str):
-    if str == "":
+    if len(str) == 0:
+        print('\0')
         return
-
     i = 0
     while i < len(str):
         if str[i] >= 'a' and str[i] <= 'z':
