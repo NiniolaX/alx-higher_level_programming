@@ -30,9 +30,16 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 
 	/* If list is not empty */
-	while (ptr->next != NULL && (ptr->next)->n < number)
+	if (number < 0 && ptr->n >= 0)
+	{
+		new->next = *head;
+		*head = new;
+		return (new);
+	}
+	while (ptr->next != NULL && number > (ptr->next)->n)
 		ptr = ptr->next;
 	new->next = ptr->next;
 	ptr->next = new;
+
 	return (new);
 }
