@@ -11,10 +11,7 @@ int check_cycle(listint_t *list)
 	listint_t *ptr, *temp;
 
 	if (list == NULL)
-	{
-		write(STDERR_FILENO, "Empty list", 11);
 		return (0);
-	}
 	ptr = list;
 	temp = list;
 
