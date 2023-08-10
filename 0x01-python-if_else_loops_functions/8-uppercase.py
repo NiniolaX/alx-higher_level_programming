@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def uppercase(str):
     if len(str) == 0:
-        print('\0')
+        print()
         return
     i = 0
     while i < len(str):
