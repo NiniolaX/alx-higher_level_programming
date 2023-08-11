@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import variable_load_5
+from variable_load_5 import a as a_local
 if __name__ == "__main__":
-    a_import = variable_load_5.a
-    print(a_import)
+    print(a_local)
