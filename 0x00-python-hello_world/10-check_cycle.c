@@ -8,19 +8,22 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *ptr, *temp;
+	listint_t *ptr1, *ptr2;
 
 	if (list == NULL)
 		return (0);
-	ptr = list;
-	temp = list;
 
-	while (ptr->next)
+	/* Pointer to move in steps of one */
+	ptr1 = list;
+	/* Pointer to move in steps of two */
+	ptr2 = list->next;
+
+	while (ptr2 != NULL && ptr2->next != NULL)
 	{
-		/* ptr hits a previously traversed head node */
-		if (ptr->next == temp)
+		if (ptr2 == ptr1 || ptr2->next == ptr1)
 			return (1);
-		ptr = ptr->next;
+		ptr1 = ptr1->next;
+		ptr2 = ptr2->next->next;
 	}
 	/* Loop terminates indicating no cycle */
 	return (0);
