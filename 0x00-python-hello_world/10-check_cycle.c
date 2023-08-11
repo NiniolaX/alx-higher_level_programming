@@ -16,14 +16,14 @@ int check_cycle(listint_t *list)
 	/* Pointer to move in steps of one */
 	ptr1 = list;
 	/* Pointer to move in steps of two */
-	ptr2 = list->next;
+	ptr2 = list;
 
 	while (ptr2 != NULL && ptr2->next != NULL)
 	{
-		if (ptr2 == ptr1 || ptr2->next == ptr1)
-			return (1);
 		ptr1 = ptr1->next;
 		ptr2 = ptr2->next->next;
+		if (ptr2 == ptr1)
+			return (1);
 	}
 	/* Loop terminates indicating no cycle */
 	return (0);
