@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 def magic_calculation(a, b, c):
-    if b < a:
+    if a < b:
         return c
     else:
-        if b > c:
-            return b + a
+        if c > b:
+            return a + b
         else:
-            return c - b * a
+            return a * b - c
