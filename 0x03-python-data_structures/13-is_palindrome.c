@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 
 	/* Address is NULL or list is empty */
 	if (head == NULL || *head == NULL)
-		return (0);
+		return (1);
 
 	/* Move slow ptr to centre of list */
 	slow = *head;
