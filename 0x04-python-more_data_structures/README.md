@@ -1,5 +1,7 @@
 ## 0x03 - PYTHON SETS AND DICTIONARIES
 
+Here the names of functions in this repository and thei uses:
+
 1. 0-square_matrix_simple - computes the square value of all integers of a
 	matrix.
 
