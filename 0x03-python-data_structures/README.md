@@ -1,8 +1,8 @@
 ## PROJECT 0x03 - PYTHON DATA STRUCTURES
-This project contains files that demostrate the use of list methods, list
+This repository contains files that demonstrate the use of list methods, list
 comprehensions, tuples and sequences in python.
 
-See below the files and the use of their containing functions:
+See below the files and the use of their containing function:
 
 1. 0-print_list_integer.py - Prints all integers of a list.
 
