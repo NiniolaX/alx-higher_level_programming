@@ -1,8 +1,5 @@
 #!/usr/bin/python3
 def complex_delete(a_dictionary, value):
-    if not a_dictionary:
-        return
-
     # List to hold names of keys to be deleted
     keys_to_delete = []
 
