@@ -10,4 +10,6 @@ def weight_average(my_list=[]):
         sum_of_weighted_scores += tup[0] * tup[1]
         sum_of_weights += tup[1]
 
-    return sum_of_weighted_scores / sum_of_weights
+    weighted_average = sum_of_weighted_scores / sum_of_weights
+
+    return weighted_average
