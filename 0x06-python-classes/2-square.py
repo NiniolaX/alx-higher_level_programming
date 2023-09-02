@@ -18,15 +18,18 @@ Functions:
 class Square:
     """A class that defines a square.
 
-    This class is a representation of a square. It instantiates it with an
-    optional size and validating that size is an integer and not less than 0
-    before instantiation.
+    This class is a representation of a square.
 
     Attributes:
-        size (int): The size of the square as a positive integer.
+        size (int): The size of the square as a positive integer. Defaults
+        to 0.
 
     Methods:
         None.
+
+    Raises:
+        TypeError: If 'size' is not an integer.
+        ValueError: If 'size' is less than 0.
     """
 
     def __init__(self, size=0):
