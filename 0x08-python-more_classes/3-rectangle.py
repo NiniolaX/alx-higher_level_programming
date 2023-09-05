@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
 This module defines a class 'Rectangle' with attibutes- width
-    and height, and methods for calculating its area and perimeter.
+and height, and methods for calculating its area and perimeter, and
+returning a printable string representation of the rectangle.
 
 Class:
     Rectangle: A basic representation of a rectangle.
