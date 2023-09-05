@@ -29,12 +29,14 @@ def matrix_divided(matrix, div):
             (iii) an element of matrix is not an int or float;
             (iv) div is not an integer or float.
     """
-    # Check if matrix is empty
-    if not matrix:
-        return []
 
     # Check if matrix is a list of lists
-    if type(matrix) is not list or not all(type(rw) is list for rw in matrix):
+    if type(matrix) is not list or len(matrix) < 1:
+        raise TypeError("matrix must be a matrix (list of lists) of \
+integers/floats")
+
+    # Checks of rows are list type
+    if not all(type(rw) is list for rw in matrix):
         raise TypeError("matrix must be a matrix (list of lists) of \
 integers/floats")
 
