@@ -26,6 +26,11 @@ class Rectangle:
         height (int): Height of rectangle
 
     Methods:
+        __int__():
+            Initializes an instance of Rectangle.
+            Args:
+                width (int): Value for width of instance.
+                height (int): Value for height of instance.
         area():
             Calculates and returns the area of the rectangle.
             Args:
@@ -39,6 +44,11 @@ class Rectangle:
             Returns:
                 int: Perimeter of the rectangle or 0 if its width or height
                 is 0.
+        __str__():
+            Returns a human readable string representation of object.
+        __repr__():
+            Returns a string representation of the object which can be used to
+            recreate it.
     """
     def __init__(self, width=0, height=0):
         self.height = height
