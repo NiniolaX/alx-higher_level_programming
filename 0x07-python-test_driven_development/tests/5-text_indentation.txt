@@ -1,0 +1,37 @@
+"""
+Tests for text_indentation function in 5-text_indentation module.
+"""
+
+# Import module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Case 1: Normal case
+>>> text_indentation("Hey there. I love coding, don't you? My tech stack is: HTML, CSS, C and just recently, Python!")
+Hey there.
+<BLANKLINE>
+ I love coding, don't you?
+<BLANKLINE>
+ My tech stack is:
+<BLANKLINE>
+ HTML, CSS, C and just recently, Python!
+
+# Case 2: Wrong type
+>>> text_indentation(["Best School."])
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(2)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+	...
+TypeError: text must be a string
+
+
+# Case 3: Empty string
+>>> text_indentation("")
+
