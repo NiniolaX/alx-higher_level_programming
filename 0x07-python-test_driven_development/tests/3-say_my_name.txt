@@ -1,0 +1,87 @@
+"""
+Tests for the say_my_name function in 3-say_my_name module
+"""
+
+# Import module
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+# Case 1: Normal case
+>>> say_my_name("Love", "Afinni")
+My name is Love Afinni
+
+
+# Case 2: Invalid type(int) for first_name
+>>> say_my_name(2, "Afinni")
+Traceback (most recent call last):
+	...
+TypeError: first_name must be a string
+
+
+# Case 3: String enclosed in brackets for first_name
+>>> say_my_name(("Love"), "Afinni")
+My name is Love Afinni
+
+
+# Case 4: Invalid type (bool) for first_name
+>>> say_my_name(True, "Afinni")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+# Case 5: Invalid type (list) for first_name
+>> say_my_name(["Love], "Afinni")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+
+# Case 6: Invalid type (dict) for last_name
+>> say_my_name("Love", {"Afinni"})
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
+
+
+# Case 7: One argument
+>>> say_my_name("Love")
+My name is Love 
+
+
+# Case 8: Empty dict as arg for last_name
+>>> say_my_name("Love", {})
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
+
+
+# Case 9: Empty list as arg for last_name
+>>> say_my_name("Love", [])
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
+
+
+# Case 10: Empty tuple as arg for last_name
+>>> say_my_name("Love", ())
+Traceback (most recent call last):
+        ...
+TypeError: last_name must be a string
+
+
+# Case 11: Empty tuple as arg for first_name
+>>> say_my_name((), "Afinni")
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+
+# Case 12: Empty tuple as only argument
+>>> say_my_name(())
+Traceback (most recent call last):
+        ...
+TypeError: first_name must be a string
+
+
+# Case 13: Empty string as only argument
+>>> say_my_name("")
+My name is  
