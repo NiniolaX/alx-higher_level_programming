@@ -1,0 +1,90 @@
+"""
+Tests for the matrix_divided function in the 2-matrix_divided module.
+"""
+
+# Import module
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Case 1: Normal case
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+
+# Case 2: Division by zero
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+	...
+ZeroDivisionError: division by zero
+
+
+# Case 3: Division by incorrect type
+>>> matrix_divided(matrix, 't')
+Traceback (most recent call last):
+	...
+TypeError: div must be a number
+>>> matrix_divided(matrix, [0])
+Traceback (most recent call last):
+	...
+TypeError: div must be a number
+
+
+# Case 4: Matrix rows of different length
+>>> matrix2 = [[-2.5, 5.0, -7.5], [-10.0, 12.5, 15.0, 17]]
+>>> matrix_divided(matrix2, 2.5)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+
+
+# Case 5: Incorrect value type in rows
+>>> matrix3 = [[-10.0, 12.5, 15.0, 17], [2.5, "Hello", 6.2, 14]]
+>>> matrix_divided(matrix3, 2.5)
+Traceback (most recent call last):
+	...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Case 6: Incorrect value type + different row length
+>>> matrix4 = [[-10.0, 12.5, 15.0, 17], [2.5, "Hello", 14]]
+>>> matrix_divided(matrix4, 2.5)
+Traceback (most recent call last):
+	...
+TypeError: Each row of the matrix must have the same size
+
+
+# Case 7: None
+>>> matrix_divided(None, 2.5)
+[]
+
+# Case 8: Tuple of tuples
+>>> matrix_divided(((1, 2, 3), (4, 5, 6)), 2)
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Case 9: Tuple of lists
+>>> matrix_divided(([1, 2, 3], [4, 5, 6]), 2)
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Case 10: List of tuples
+>>> matrix_divided([(1, 2, 3), (4, 5, 6)], 2)
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Case 11: String
+>>> matrix_divided("Hello", 2)
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+# Case 12: Empty list
+>>> matrix_divided([], 2)
+[]
