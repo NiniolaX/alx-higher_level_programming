@@ -13,7 +13,7 @@ Functions:
 """
 
 
-def say_my_name(first_name="", last_name=""):
+def say_my_name(first_name=None, last_name=""):
     """Prints a persons name in format: My name is <first_name> <last_name>
 
     Args:
@@ -26,6 +26,8 @@ def say_my_name(first_name="", last_name=""):
     Raises:
         TypeError: If first_name or last_name are not strings.
     """
+    if first_name is None:
+        return None
     if type(first_name) is not str:
         raise TypeError("first_name must be a string")
     if type(last_name) is not str:
