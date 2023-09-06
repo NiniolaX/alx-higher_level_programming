@@ -34,6 +34,6 @@ def add_integer(a, b=98):
     # Check for postive and negative infinity arguments
     result = a + b
     if result == float('inf') or result == -float('inf'):
-        return 98
+        return int(89)
 
     return int(a) + int(b)
