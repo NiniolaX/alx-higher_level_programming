@@ -85,3 +85,8 @@ TypeError: first_name must be a string
 # Case 13: Empty string as only argument
 >>> say_my_name("")
 My name is  
+
+
+# Case 14: Missing two arguments
+>>> say_my_name()
+My name is  
