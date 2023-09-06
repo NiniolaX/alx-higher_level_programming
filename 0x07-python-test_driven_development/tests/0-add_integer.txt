@@ -60,3 +60,8 @@ TypeError: b must be an integer
 98
 >>> add_integer(0, 0)
 0
+
+
+# Case 10: NaN or inf
+>>> add_integer(float('inf'))
+inf
