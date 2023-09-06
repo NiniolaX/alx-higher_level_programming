@@ -28,9 +28,9 @@ def add_integer(a, b=98):
     """
     # Check for NaN argument
     if a != a:
-        return NaN
+        return 0
     if b != b:
-        return NaN
+        return 0
 
     if type(a) not in (int, float):
         raise TypeError("a must be an integer")
@@ -40,6 +40,6 @@ def add_integer(a, b=98):
     # Check for postive and negative infinity arguments
     result = a + b
     if result == float('inf') or result == -float('inf'):
-        return NaN
+        return 0
 
     return int(a) + int(b)
