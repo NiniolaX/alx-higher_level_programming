@@ -13,7 +13,7 @@ Functions:
 """
 
 
-def print_square(size):
+def print_square(size=None):
     """Prints a square with the character '#'.
 
    Args:
