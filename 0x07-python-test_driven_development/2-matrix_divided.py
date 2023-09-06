@@ -12,7 +12,7 @@ Functions:
 """
 
 
-def matrix_divided(matrix, div):
+def matrix_divided(matrix=None, div=None):
     """Function to divide a matrix
 
     Args:

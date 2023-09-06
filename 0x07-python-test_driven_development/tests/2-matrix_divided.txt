@@ -93,3 +93,15 @@ TypeError: matrix must be a matrix (list of lists) of integers/floats
 Traceback (most recent call last):
 	...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Case 13: One argument
+>>> matrix_divided([1, 2, 3])
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Case 14: No argument
+>>> matrix_divided()
+Traceback (most recent call last):
+        ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
