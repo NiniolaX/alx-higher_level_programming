@@ -14,10 +14,10 @@ Functions:
 
 def lookup(obj=None):
     """Returns list of available attributes and methods of an object
-    
+
     Args:
         obj (object): Object to lookup
-    
+
     Returns:
         list: Available attributes and methods of the object
     """
