@@ -14,9 +14,10 @@ Functions:
     None
 """
 
+
 class MyList(list):
     """A child class of the 'list' class.
-    
+
     Attributes:
         None
 
@@ -30,10 +31,9 @@ class MyList(list):
                 None
     """
     def __init__(self):
-        self.my_list = []
         pass
 
     def print_sorted(self):
         "Prints the list sorted in ascending order."
-        sorted_list = sorted(self.my_list)
+        sorted_list = sorted(self)
         print(sorted_list)
