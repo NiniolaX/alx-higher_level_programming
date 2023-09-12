@@ -21,4 +21,4 @@ def lookup(obj=None):
     Returns:
         list: Available attributes and methods of the object
     """
-    return dict(obj)
+    return dir(obj)
