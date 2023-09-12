@@ -17,7 +17,6 @@ def lookup(obj=None):
 
     Args:
         obj (object): Object to lookup
-
     Returns:
         list: Available attributes and methods of the object
     """
