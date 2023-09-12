@@ -2,20 +2,33 @@
 Test of 'MyList' class in '1-my_list' module.
 """
 
->>> MyList = __import__(1-my_list).MyList
+>>> MyList = __import__('1-my_list').MyList
 
 # Normal case
 >>> ls = MyList()
->>> for i in range(5, 1):
-        ls.append(i)
+>>> for i in range(5, 0, -1):
+...	ls.append(i)
 >>> print(ls)
+[5, 4, 3, 2, 1]
 >>> ls.print_sorted()
+[1, 2, 3, 4, 5]
 >>> print(ls)
 [5, 4, 3, 2, 1]
-[1, 2, 3, 4, 5]
-[5, 4, 3, 2, 1]
+
+# List with negative numbers
+>>> ls = MyList()
+>>> for i in range(3, -2, -1):
+...	ls.append(i)
+>>> print(ls)
+[3, 2, 1, 0, -1]
+>>> ls.print_sorted()
+[-1, 0, 1, 2, 3]
+>>> print(ls)
+[3, 2, 1, 0, -1]
 
 # Empty MyList
 >>> ls = MyList()
 >>> print(ls)
+[]
 >>> ls.print_sorted()
+[]
