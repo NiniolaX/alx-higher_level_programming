@@ -1,0 +1,27 @@
+"""
+Tests for 'BaseGeometry' class in 7-base_geometry module.
+"""
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Normal case
+>>> b = BaseGeometry()
+>>> b.integer_validator("height", 12)
+
+# Wrong value - float
+>>> b.integer_validator("height", -12)
+Traceback (most recent call last):
+	...
+ValueError: height must be greater than 0
+
+# Wrong type
+>>> b.integer_validator("height", '4')
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong value - bool
+>>> b.integer_validator("height", bool)
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
