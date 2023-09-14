@@ -8,6 +8,14 @@ Tests for 'BaseGeometry' class in 7-base_geometry module.
 >>> b = BaseGeometry()
 >>> b.integer_validator("height", 12)
 
+
+# Area test
+>>> try:
+...	b.area()
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[Exception] area() is not implemented
+
 # Wrong value - float
 >>> b.integer_validator("height", -12)
 Traceback (most recent call last):
@@ -20,8 +28,44 @@ Traceback (most recent call last):
         ...
 TypeError: height must be an integer
 
-# Wrong value - bool
->>> b.integer_validator("height", bool)
+# Wrong value
+>>> b.integer_validator("height", 0)
+Traceback (most recent call last):
+        ...
+ValueError: height must be greater than 0
+
+# Wrong type - float
+>>> b.integer_validator("height", 3.5)
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong type - bool
+>>> b.integer_validator("height", True)
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Empty value
+>>> b.integer_validator("height", None)
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong type - set
+>>> b.integer_validator("height", {10, 15})
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong type - set
+>>> b.integer_validator("height", {10})
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong type - set
+>>> b.integer_validator("height", {10,})
 Traceback (most recent call last):
         ...
 TypeError: height must be an integer
