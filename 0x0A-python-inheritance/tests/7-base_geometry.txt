@@ -8,6 +8,7 @@ Tests for 'BaseGeometry' class in 7-base_geometry module.
 >>> b = BaseGeometry()
 >>> b.integer_validator("height", 12)
 
+>>> b.integer_validator("height", 1)
 
 # Area test
 >>> try:
@@ -64,8 +65,20 @@ Traceback (most recent call last):
         ...
 TypeError: height must be an integer
 
-# Wrong type - set
->>> b.integer_validator("height", {10,})
+# Wrong type - tuple
+>>> b.integer_validator("height", (10,))
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Wrong type - list
+>>> b.integer_validator("height", [10])
+Traceback (most recent call last):
+        ...
+TypeError: height must be an integer
+
+# Missing one argument
+>>> b.integer_validator("height")
 Traceback (most recent call last):
         ...
 TypeError: height must be an integer
