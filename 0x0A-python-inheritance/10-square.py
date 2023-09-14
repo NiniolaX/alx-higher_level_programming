@@ -9,6 +9,7 @@ Attributes:
 Classes:
     BaseGeometry: A representation of a geomtery object.
     Rectangle: A representation of a rectangle. Inherits from 'BaseGeometry'.
+    Square: A representation of a square. Inherits from 'Rectangle'.
 """
 
 
@@ -45,13 +46,14 @@ class BaseGeometry:
 
 
 class Rectangle(BaseGeometry):
-    """A representation of a rectangele.
+    """A representation of a rectangle.
 
     Attributes:
         width: width of rectangle
         height: height of an rectangle
 
-    Methods:
+    Methods
+        Methods:
         area():
             Calculates the area of the rectangle
             Args:
@@ -77,3 +79,16 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         return f"[Rectangle] {self.__width}/{self.__height}"
+
+
+class Square(Rectangle):
+    """A representation of a square.
+
+    Attributes:
+        None.
+
+    Methods:
+        None
+    """
+    def __init__(self, size):
+        super().__init__(size, size)
