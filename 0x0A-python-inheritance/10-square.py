@@ -41,8 +41,10 @@ class BaseGeometry:
         """Validates that 'value' is an integer"""
         if type(value) is not int:
             raise TypeError("{} must be an integer".format(name))
-        elif value <= 0:
+        elif value < 1:
             raise ValueError("{} must be greater than 0".format(name))
+        else:
+            return value
 
 
 class Rectangle(BaseGeometry):
@@ -68,10 +70,8 @@ class Rectangle(BaseGeometry):
                 (str): string representation of an instance of the class
     """
     def __init__(self, width, height):
-        self.__width = width
-        self.__height = height
-        self.integer_validator("width", self.__width)
-        self.integer_validator("height", self.__height)
+        self.__width = self.integer_validator("width", width)
+        self.__height = self.integer_validator("height", height)
 
     def area(self):
         """Calculates the area of the rectangle"""
