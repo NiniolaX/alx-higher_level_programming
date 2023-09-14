@@ -27,8 +27,7 @@ class BaseGeometry:
         ValueError: If 'value' is less than or equal to 0.
     """
     def __init__(self, name="", value=None):
-        self.name = name
-        self.value = value
+        pass
 
     def area(self):
         """Calculates the area of the object"""
