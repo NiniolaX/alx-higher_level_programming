@@ -88,12 +88,12 @@ class Square(Rectangle):
 
     Methods
         area():
-            Calculates the area of the rectangle
+            Calculates the area of the square
             Args:
                 None
             Returns:
-                (int): area of the rectangle
-        __str__():
+                (int): area of the square
+                __str__():
             Returns a string representation of an instance of the class
             Args:
                 None
