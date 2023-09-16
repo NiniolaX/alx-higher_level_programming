@@ -1,24 +1,25 @@
 #!/usr/bin/python3
 """
-This module defines a function that returns the JSON representation of an
-object.
+This module defines a function that returns an object represented by a JSON
+string.
 
 Attributes:
     None
 
 Functions:
-    to_json_string - Returns the JSON representation of an object.
+    from_json_string - Returns an object represented by a JSON string.
 """
 import json
 
 
-def to_json_string(my_obj):
-    """Returns the JSON representation of an onject
+def from_json_string(my_str):
+    """Returns the an object (Python data structure) represented by a JSON
+    string.
 
     Args:
-        my_obj (object): Object whos JSON representation is to be returned.
+        my_str (string): JSON string
 
     Returns:
-        str: JSON representation of object.
+        str: Object (python data structure).
     """
-    return json.dumps(my_obj)
+    return json.loads(my_str)
