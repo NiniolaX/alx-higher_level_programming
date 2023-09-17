@@ -18,9 +18,9 @@ class Student:
     This class is a basic representation of a student.
 
     Attributes:
-        first_name: First name of student.
-        last_name: Last name of student.
-        age: Age of student.
+        first_name (str): First name of student.
+        last_name (str): Last name of student.
+        age (int): Age of student.
 
     Methods:
         to_json: Retrieves a dictionary representation of an instance of
