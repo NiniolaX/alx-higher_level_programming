@@ -30,6 +30,15 @@ class Student:
 
             Args:
                 attrs (list of strings)- list of attribute to be retrieved.
+
+        reload_from_json:
+            Replaces all attributes of an instance of the class.
+
+            Args:
+                json (dict): contains the attribute names and values to
+                replace current attributes of class instance with.
+
+
     """
     def __init__(self, first_name="", last_name="", age=None):
         self.first_name = first_name
@@ -42,3 +51,8 @@ class Student:
                                            in attrs):
            return {key: self.__dict__[key] for key in attrs if key in self.__dict__}
         return self.__dict__
+
+    def reload_from_json(self, json):
+        """Replaces all attributes of an instance of the class."""
+        for key, value in json.items():
+            setattr(self, key, value)
