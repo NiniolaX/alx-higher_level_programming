@@ -40,5 +40,6 @@ class Student:
         """Retrieves dictionary representation of an instance of the class."""
         if isinstance(attrs, list) and all(isinstance(item, str) for item
                                            in attrs):
-           return {key: self.__dict__[key] for key in attrs if key in self.__dict__}
+            return {key: self.__dict__[key] for key in attrs
+                    if key in self.__dict__}
         return self.__dict__
