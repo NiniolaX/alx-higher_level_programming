@@ -42,7 +42,7 @@ class Rectangle(Base):
                 TypeError: If width is not an integer
                 ValueError: If width <= 0
 
-	    """
+        """
         return self.__width
 
     @width.setter
