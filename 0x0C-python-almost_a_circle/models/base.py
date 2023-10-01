@@ -11,8 +11,9 @@ Functions:
 
 class Base:
     """Base class
+
     Atributes:
-            id (int): Id of instance
+            id (int): id of class instance
     """
     __nb_objects = 0
 
