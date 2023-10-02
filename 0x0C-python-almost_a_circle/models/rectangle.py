@@ -19,7 +19,7 @@ class Rectangle(Base):
         x (int, optional): horizontal position
         y (int, optional): vertical position
         id (int): id of class instance
-   
+
     Methods:
         area:
             Returns the area of the Rectangle instance.
