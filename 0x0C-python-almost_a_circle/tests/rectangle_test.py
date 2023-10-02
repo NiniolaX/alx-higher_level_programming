@@ -36,7 +36,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect.width, 3)
 
     def test_width_type_error(self):
-        """Test validity of width type"""
+        """Tests width type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
         with self.assertRaises(TypeError):
             rect.width = 'a'
@@ -50,7 +50,7 @@ class TestRectangleClass(unittest.TestCase):
             rect.width = {1: 'a', 2: 'b'}
 
     def test_width_value_error(self):
-        """Test validity of width value"""
+        """Tests width value error handler"""
         rect = Rectangle(5, 4, x=1, y=2)
         with self.assertRaises(ValueError):
             rect.width = -1
@@ -63,7 +63,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect.height, 8)
 
     def test_height_type_error(self):
-        """Test validity of width type"""
+        """Tests height type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
         with self.assertRaises(TypeError):
             rect.height = 'b'
@@ -77,7 +77,7 @@ class TestRectangleClass(unittest.TestCase):
             rect.height = {1: 'a', 2: 'b'}
 
     def test_height_value_error(self):
-        """Test validity of width value"""
+        """Tests height value error handler"""
         rect = Rectangle(5, 4, x=1, y=2)
         with self.assertRaises(ValueError):
             rect.height = -100
@@ -90,7 +90,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect.x, 1)
 
     def test_x_type_error(self):
-        """Test validity of x type"""
+        """Tests x type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
         with self.assertRaises(TypeError):
             rect.x = 'b'
@@ -100,7 +100,7 @@ class TestRectangleClass(unittest.TestCase):
             rect.x = [1,2,3]
 
     def test_x_value_error(self):
-        """Test validity of x value"""
+        """Tests x value error handler"""
         rect = Rectangle(5, 4, x=1, y=2)
         with self.assertRaises(ValueError):
             rect.x = -1000
@@ -111,7 +111,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(rect.y, 2)
 
     def test_y_type_error(self):
-        """Test validity of y type"""
+        """Tests y type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
         with self.assertRaises(TypeError):
             rect.y = 'b'
@@ -121,10 +121,19 @@ class TestRectangleClass(unittest.TestCase):
             rect.y = {1,2,3}
 
     def test_y_value_error(self):
-        """Test validity of y value"""
+        """Tests y value error handler"""
         rect = Rectangle(5, 4, x=1, y=2)
         with self.assertRaises(ValueError):
             rect.y = -10000
+
+    def test_area_method(self):
+        """Tests the area method"""
+        rect = Rectangle(5, 4, x=1, y=2)
+        self.assertEqual(rect.area(), 20)
+        rect.width = 10
+        self.assertEqual(rect.area(), 40)
+        rect.height = 2
+        self.assertEqual(rect.area(), 20)
 
 if __name__ == "__main__":
     unittest.main()
