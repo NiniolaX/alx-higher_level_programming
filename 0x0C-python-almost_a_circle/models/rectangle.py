@@ -19,6 +19,16 @@ class Rectangle(Base):
         x (int, optional): horizontal position
         y (int, optional): vertical position
         id (int): id of class instance
+   
+    Methods:
+        area:
+            Returns the area of the Rectangle instance.
+            Args:
+                None
+        display:
+            Prints the Rectangle instance with the character '#' to stdout.
+            Args:
+                None
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
