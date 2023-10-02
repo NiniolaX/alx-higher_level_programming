@@ -23,7 +23,7 @@ def add_attribute(obj, attr_name, attr_value):
     Raises:
         TypeError: if new attribute can't be added
     """
-    if isinstance(obj, (int, float, str)):
+    if isinstance(obj, (float, str)):
         raise TypeError("can't add new attribute")
     if not hasattr(obj, attr_name):
         setattr(obj, attr_name, attr_value)
