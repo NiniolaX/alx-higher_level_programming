@@ -25,6 +25,12 @@ def add_attribute(obj, attr_name, attr_value):
     """
     if isinstance(obj, (float, str)):
         raise TypeError("can't add new attribute")
+
+# Check if attributes is among the allowed attributes for the class
+    if hasattr(obj, __slots__):
+        if attr_name not in obj.__slots__:
+            raise TypeError("can't add new attribute")
+
     if not hasattr(obj, attr_name):
         setattr(obj, attr_name, attr_value)
     else:
