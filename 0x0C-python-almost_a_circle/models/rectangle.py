@@ -147,7 +147,7 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Prints the Rectangle instance with the '#' character to stdout"""
+        """Prints the Rectangle instance to stdout with the '#' character"""
         for i in range(self.y):
             print()
         for i in range(self.height):
@@ -161,3 +161,15 @@ class Rectangle(Base):
         """
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}"
+
+    def update(self, *args):
+        """Assigns an argument to each attribute of a Rectangle instance"""
+        if len(args) > 0:
+            try:
+                self.id = args[0]
+                self.width = args[1]
+                self.height = args[2]
+                self.x = args[3]
+                self.y = args[4]
+            except IndexError:
+                pass
