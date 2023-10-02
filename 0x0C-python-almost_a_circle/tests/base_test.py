@@ -22,11 +22,7 @@ class TestBaseClass(unittest.TestCase):
 		self.assertEqual(obj2.id, 2)
 
 	def test_constructor_with_id(self):
-		"""Tests the class contstructor with attribute 'id'
-
-		Args:
-			id (int): Id of instance.
-		"""
+		"""Tests the class contstructor with attribute 'id'."""
 		obj = Base(5)
 		obj2 = Base(27)
 		self.assertEqual(obj.id, 5)
