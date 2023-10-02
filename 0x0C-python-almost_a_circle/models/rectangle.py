@@ -162,7 +162,7 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
 {self.width}/{self.height}"
 
-    def update(self, *args, *kwargs):
+    def update(self, *args, **kwargs):
         """Assigns an argument to each attribute of a Rectangle instance"""
         if len(args) > 0:
             try:
