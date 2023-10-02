@@ -155,4 +155,5 @@ class Rectangle(Base):
         """Returns the string representation of a Rectangle instance
         Format: [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - \
+{self.width}/{self.height}"

@@ -16,7 +16,9 @@ class TestRectangleClass(unittest.TestCase):
     """
 
     def setUp(self):
-        # Create a rectangle object for testing
+        """Create a rectangle object for testing"""
+        # Reset the id counter in the base class
+        Base._Base__nb_objects = 0
         self.r = Rectangle(3, 3, 0, 0, 25)
 
     def test_constructor(self):
