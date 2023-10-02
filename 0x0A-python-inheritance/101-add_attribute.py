@@ -23,7 +23,7 @@ def add_attribute(obj, attr_name, attr_value):
     Raises:
         TypeError: if new attribute can't be added
     """
-    if isinstance(obj, (float, str)):
+    if isinstance(obj, (float, int, str)):
         raise TypeError("can't add new attribute")
 
 # Check if attributes is among the allowed attributes for the class
