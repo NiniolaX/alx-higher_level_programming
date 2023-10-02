@@ -4,7 +4,9 @@
 Unittest for the Rectangle class.
 """
 import unittest
+from unittest.mock import patch
 from models.rectangle import Rectangle
+import io
 
 class TestRectangleClass(unittest.TestCase):
     """Tests the Base class.
@@ -127,13 +129,23 @@ class TestRectangleClass(unittest.TestCase):
             rect.y = -10000
 
     def test_area_method(self):
-        """Tests the area method"""
+        """Tests the area public method"""
         rect = Rectangle(5, 4, x=1, y=2)
         self.assertEqual(rect.area(), 20)
         rect.width = 10
         self.assertEqual(rect.area(), 40)
         rect.height = 2
         self.assertEqual(rect.area(), 20)
+
+    def test_display_method(self):
+        """Tests the display public method"""
+        rect = Rectangle(3, 3)
+
+        with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
+            rect.display()
+            output = mock_stdout.getvalue()
+        expected_output = "###\n###\n###\n"
+        self.assertEqual(output, expected_output)
 
 if __name__ == "__main__":
     unittest.main()
