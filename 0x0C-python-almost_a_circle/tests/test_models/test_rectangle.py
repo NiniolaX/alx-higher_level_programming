@@ -15,16 +15,20 @@ class TestRectangleClass(unittest.TestCase):
         unittest (class): unittest
     """
 
+    def setUp(self):
+        # Create a rectangle object for testing
+        self.r = Rectangle(3, 3, 0, 0, 25)
+
     def test_constructor(self):
         """Tests constructor of the Rectangle class"""
         rect = Rectangle(5, 7)
-        rect1 = Rectangle(2, 4)
         self.assertIsInstance(rect, Rectangle)
         self.assertEqual(rect.width, 5)
         self.assertEqual(rect.height, 7)
         self.assertEqual(rect.x, 0)
         self.assertEqual(rect.y, 0)
         self.assertEqual(rect.id, 1)
+        rect1 = Rectangle(2, 4)
         self.assertEqual(rect1.id, 2)
 
     def test_constructor_with_id(self):
@@ -36,6 +40,12 @@ class TestRectangleClass(unittest.TestCase):
         """Tests width getter"""
         rect = Rectangle(3, 8, x=1, y=2)
         self.assertEqual(rect.width, 3)
+
+    def test_width_setter(self):
+        """Tests width setter"""
+        rect = Rectangle(3, 8)
+        rect.width = 10
+        self.assertEqual(rect.width, 10)
 
     def test_width_type_error(self):
         """Tests width type error handler"""
@@ -64,6 +74,12 @@ class TestRectangleClass(unittest.TestCase):
         rect = Rectangle(3, 8, x=1, y=2)
         self.assertEqual(rect.height, 8)
 
+    def test_height_setter(self):
+        """Tests height setter"""
+        rect = Rectangle(3, 8)
+        rect.height = 15
+        self.assertEqual(rect.height, 15)
+
     def test_height_type_error(self):
         """Tests height type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
@@ -91,6 +107,12 @@ class TestRectangleClass(unittest.TestCase):
         rect = Rectangle(3, 8, x=1, y=2)
         self.assertEqual(rect.x, 1)
 
+    def test_x_setter(self):
+        """Tests x setter"""
+        rect = Rectangle(3, 8, x=1)
+        rect.x = 5
+        self.assertEqual(rect.x, 5)
+
     def test_x_type_error(self):
         """Tests x type error handler"""
         rect = Rectangle(3, 8, x=1, y=2)
@@ -111,6 +133,12 @@ class TestRectangleClass(unittest.TestCase):
         """Tests y getter"""
         rect = Rectangle(3, 8, x=1, y=2)
         self.assertEqual(rect.y, 2)
+
+    def test_y_setter(self):
+        """Tests y setter"""
+        rect = Rectangle(3, 8, x=1)
+        rect.x = 5
+        self.assertEqual(rect.x, 5)
 
     def test_y_type_error(self):
         """Tests y type error handler"""
@@ -139,13 +167,13 @@ class TestRectangleClass(unittest.TestCase):
 
     def test_display_method(self):
         """Tests the display public method"""
-        rect = Rectangle(3, 3)
 
         with patch('sys.stdout', new_callable=io.StringIO) as mock_stdout:
-            rect.display()
+            self.r.display()
             output = mock_stdout.getvalue()
         expected_output = "###\n###\n###\n"
         self.assertEqual(output, expected_output)
+
 
 if __name__ == "__main__":
     unittest.main()
