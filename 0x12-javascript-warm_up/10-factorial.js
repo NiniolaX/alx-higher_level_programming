@@ -8,7 +8,7 @@ const num = parseInt(args[0]);
 // Write function that computes the factorial of a number
 function factorial (n) {
   if (isNaN(n)) {
-    return (0);
+    return (1);
   } else if (n === 0) {
     return (1);
   } else {
