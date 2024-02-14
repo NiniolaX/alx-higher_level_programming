@@ -4,7 +4,7 @@
 // Extract number of times text should be printed from argument list
 const args = process.argv.slice(2);
 const x = parseInt(args[0]);
-
+let i;
 /* If first argument can't be converted to an integer, print error message
  * else, print text x times
  */
