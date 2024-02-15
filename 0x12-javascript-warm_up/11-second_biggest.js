@@ -21,6 +21,7 @@ function secondBiggest (arrayOfNumbers) {
   }
 }
 
+// Find the second largest number in argument list
 const args = process.argv.slice(2);
 const numbers = args.map(Number); // Convert values in args to integers
 
