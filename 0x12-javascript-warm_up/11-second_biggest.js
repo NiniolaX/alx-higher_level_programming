@@ -1,35 +1,19 @@
 #!/usr/bin/node
-// Script searches the second biggest integer in the list of arguments
+// Script searches the second largest integer in the list of arguments
 
-// Extract arguments
-const args = process.argv.slice(2);
-let max = Number.MIN_VALUE;
-let max2 = Number.MIN_VALUE;
-let num;
-
-// Write function that returns the second biggest number in a list
-/*
- * Find the biggest element
- * Find the next biggest element
- * To find the biggest element
- * 1. Initialize a variable max to Number.MIN_VALUE
- * 2. Compare each element in array to max, if an element is greater than max, reassign it to max and continue search.
- * 3. Repeat process 1-2 to find second biggest number
- */
-function secondBig (args) {
-  // Obtain maximum number
-  for (num of args) {
-    if (parseInt(num) > max) {
-      max = parseInt(num);
+// Write function that returns the second largest number in an array of numbers
+function secondBiggest (arrayOfNumbers) {
+  let num;
+  let max = Number.MIN_VALUE;
+  let max2;
+  for (num of arrayOfNumbers) {
+    if (num > max) {
+      max2 = max;
+      max = num;
+    } else if (num > max2 && num !== max) {
+      max2 = num;
     }
   }
-  // Obtain second maximum number
-  for (num of args) {
-    if (parseInt(num) > max2 && parseInt(num) < max) {
-      max2 = parseInt(num);
-    }
-  }
-  // Return second maximum number
   if (max2 === Number.MIN_VALUE) {
     return (0);
   } else {
@@ -37,5 +21,11 @@ function secondBig (args) {
   }
 }
 
-// Print second biggest number
-console.log(secondBig(args));
+const args = process.argv.slice(2);
+const numbers = args.map(Number); // Convert values in args to integers
+
+if (args.length === 0) {
+  console.log(0);
+} else {
+  console.log(secondBiggest(numbers));
+}
