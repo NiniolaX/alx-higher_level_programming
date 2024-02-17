@@ -2,12 +2,6 @@
 """
 This script contains a function that lists all states from a database..
 Note: database name is passed as argument to the script.
-
-Functions:
-    list_states: Lists all states from a specified database
-
-Attributes:
-    None
 """
 
 
@@ -23,11 +17,11 @@ if __name__ == "__main__":
     # Create a cursor object
     cur = db.cursor()
 
-    # Fetch data fron database into cursor object
+    # Fetch states data from database
     cur.execute("SELECT * FROM states ORDER BY states.id")
+    result_rows = cur.fetchall()
 
     # Print all rows in cursor
-    result_rows = cur.fetchall()
     for row in result_rows:
         print(row)
 
