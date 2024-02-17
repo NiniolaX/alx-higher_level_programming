@@ -26,7 +26,7 @@ def list_states(username, password, database_name):
     Returns:
         None
     """
-    # Connect to the database on localhost
+    # Connect to MySQL server running on localhost at port 3306
     db = MySQLdb.connect(host="localhost", user=username, passwd=password,
                          db=database_name, port=3306)
 
@@ -34,7 +34,7 @@ def list_states(username, password, database_name):
     cur = db.cursor()
 
     # Excute query and put results in cursor
-    cur.execute("SELECT * FROM states")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
 
     # Fetch and print all query results from the cursor
     row = cur.fetchone()
