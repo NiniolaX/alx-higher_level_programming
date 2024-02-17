@@ -26,16 +26,25 @@ def list_states(username, password, database_name):
     Returns:
         None
     """
+    # Connect to the database on localhost
     db = MySQLdb.connect(host="localhost", user=username, passwd=password,
                          db=database_name, port=3306)
+
+    # Create a cursor object to store query results
     cur = db.cursor()
+
+    # Excute query and put results in cursor
     cur.execute("SELECT * FROM states")
 
-    # Print all rows in the cursor
+    # Fetch and print all query results from the cursor
     row = cur.fetchone()
     while (row is not None):
         print(row)
         row = cur.fetchone()
+
+    # Free cursor and sever connection to database
+    cur.close()
+    db.close()
 
 
 if __name__ == "__main__":
