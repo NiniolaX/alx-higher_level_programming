@@ -8,7 +8,7 @@ import sys
 
 
 if __name__ == "__main__":
-    argument = sys.argv[4]
+    state_name_searched = sys.argv[4]
 
     # Establish connection to database
     db = MySQLdb.connect(host="localhost", port=3306,
@@ -18,9 +18,8 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute query
-    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id"\
-            .format(argument)
-    cur.execute(query)
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id"
+    cur.execute(query, (state_name_searched,))
 
     rows = cur.fetchall()
     for row in rows:
