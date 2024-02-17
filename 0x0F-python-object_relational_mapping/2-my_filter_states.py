@@ -16,12 +16,16 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          database=sys.argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %s ORDER BY states.id",
-                (argument,))
+
+    # Execute query
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id"\
+            .format(argument)
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
         print(row)
 
+    # Clean up
     cur.close()
     db.close()
