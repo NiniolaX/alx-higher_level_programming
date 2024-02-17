@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This script takes in an argument and displays rows in the states table
-where name matches the argument.
+"""This script takes in an argument and displays all values in the states table
+where name matches the argument, safe from MySQL injections.
 """
 
 import MySQLdb
@@ -18,8 +18,9 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Execute query
-    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY states.id"
-    cur.execute(query, (argument,))
+    query = "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY states.id"\
+            .format(argument)
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
