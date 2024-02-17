@@ -15,39 +15,24 @@ import MySQLdb
 import sys
 
 
-def list_states(username, password, database_name):
-    """Lists all states of a specified database
+if __name__ == "__main__":
+    args = sys.argv[1:]
 
-    Args:
-        username(str): MySQL username
-        password(str): MySQL password
-        database_name: MySQL database to use
+    # Create a connection with the mysql server
+    db = MySQLdb.connect(host="localhost", port=3306, user=args[0],
+                         password=args[1], db=args[2])
 
-    Returns:
-        None
-    """
-    # Connect to MySQL server running on localhost at port 3306
-    db = MySQLdb.connect(host="localhost", user=username, passwd=password,
-                         db=database_name, port=3306)
-
-    # Create a cursor object to store query results
+    # Create a cursor object
     cur = db.cursor()
 
-    # Excute query and put results in cursor
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC;")
+    # Fetch data fron database into cursor object
+    cur.execute("SELECT * FROM states ORDER BY states.id")
 
-    # Fetch and print all query results from the cursor
-    row = cur.fetchone()
-    while (row is not None):
+    # Print all rows in cursor
+    result_rows = cur.fetchall()
+    for row in result_rows:
         print(row)
-        row = cur.fetchone()
 
-    # Free cursor and sever connection to database
+    # Close connection to server
     cur.close()
     db.close()
-
-
-if __name__ == "__main__":
-    args = sys.argv[1:]  # First argument is name of script
-    if len(args) == 3:
-        list_states(args[0], args[1], args[2])
