@@ -1,28 +1,44 @@
 #!/usr/bin/python3
 """
-This script lists all states from the database hbtn_0e_0_usa
-(database name is passed as argument to the script).
+This script contains a function that lists all states from a database..
+Note: database name is passed as argument to the script.
+
+Functions:
+    list_states: Lists all states from a specified database
+
+Attributes:
+    None
 """
 
 
 import MySQLdb
-import sys
 
-# Extract script arguments
-args = sys.argv[1:]
 
-username = args[0]
-password = args[1]
-database_name = args[2]
+def list_states(username, password, database_name):
+    """Lists all states of a specified database
 
-# Connect to database and load all rows in state table into the cursor object
-db = MySQLdb.connect(host="localhost", user=username, passwd=password,
-                     db=database_name, port=3306)
-cur = db.cursor()
-cur.execute("SELECT * FROM states")
+    Args:
+        username(str): MySQL username
+        password(str): MySQL password
+        database_name: MySQL database to use
 
-# Print all rows in the cursor
-row = cur.fetchone()
-while (row is not None):
-    print(row)
+    Returns:
+        None
+    """
+    db = MySQLdb.connect(host="localhost", user=username, passwd=password,
+                         db=database_name, port=3306)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+
+    # Print all rows in the cursor
     row = cur.fetchone()
+    while (row is not None):
+        print(row)
+        row = cur.fetchone()
+
+
+if __name__ == "__main__":
+    import sys
+    args = sys.argv[1:]  # First argument is name of script
+    if len(args) == 3:
+        list_states(args[0], args[1], args[2])
