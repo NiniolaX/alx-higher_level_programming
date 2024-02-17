@@ -14,6 +14,7 @@ Attributes:
 import MySQLdb
 import sys
 
+
 def list_states(username, password, database_name):
     """Lists all states of a specified database
 
