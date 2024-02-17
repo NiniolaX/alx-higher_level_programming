@@ -12,7 +12,7 @@ Attributes:
 
 
 import MySQLdb
-
+import sys
 
 def list_states(username, password, database_name):
     """Lists all states of a specified database
@@ -38,7 +38,6 @@ def list_states(username, password, database_name):
 
 
 if __name__ == "__main__":
-    import sys
     args = sys.argv[1:]  # First argument is name of script
     if len(args) == 3:
         list_states(args[0], args[1], args[2])
