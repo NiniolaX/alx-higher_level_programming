@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+"""
+This script lists all the states with name beginning with 'N' in the database.
+"""
 
 import MySQLdb
 import sys
+
 
 if __name__ == "__main__":
     # Connect to database
