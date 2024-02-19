@@ -20,8 +20,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the database
-    query = select(City, State).select_from(City).join(State, onclause=City.state_id == State.id)
-    results = session.execute(query).fetchall()
+    results = session.query(City, State).filter(City.state_id == State.id).all()
 
     for city, state in results:
         print(f"{state.name}: ({city.id}) {city.name}")
