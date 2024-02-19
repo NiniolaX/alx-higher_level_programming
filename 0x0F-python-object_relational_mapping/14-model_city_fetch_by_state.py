@@ -5,7 +5,7 @@ Database name is passed as an argument to the script.
 
 from model_city import City
 from model_state import State
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, select
 from sqlalchemy.orm import sessionmaker
 import sys
 
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the database
-    results = session.query(City, State).join(State).all()
+    query = select(City, State).select_from(City).join(State, onclause=City.state_id == State.id)
+    results = session.execute(query).fetchall()
 
-    for row in results:
+    for city, state in results:
         print(f"{state.name}: ({city.id}) {city.name}")
