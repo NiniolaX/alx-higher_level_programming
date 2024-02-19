@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This file contains the class definition of a State which links to the MySQL
-database states.
+database table states.
 
 Classes:
     Base: An instance of SQLAlchemy declarative base from which other classes
