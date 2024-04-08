@@ -8,6 +8,7 @@ This script:
 
 if __name__ == "__main__":
     import urllib.request
+    import urllib.parse
     import sys
 
     # Extract url and email from script arguments
@@ -16,7 +17,8 @@ if __name__ == "__main__":
 
     # Build request object
     data = {'email': email}
-    req = urllib.request.Request(url, data)
+    encoded_data = urllib.parse.urlencode(data).encode('utf-8')
+    req = urllib.request.Request(url, encoded_data)
 
     # Send POST request to server
     with urllib.request.urlopen(req) as response:
