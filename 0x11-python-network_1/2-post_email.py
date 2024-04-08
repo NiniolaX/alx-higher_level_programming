@@ -23,4 +23,4 @@ if __name__ == "__main__":
     # Send POST request to server
     with urllib.request.urlopen(req) as response:
         page = response.read()
-        print(page)
+        print(page.decode('utf-8'))
