@@ -17,7 +17,7 @@ def post_json(q):
     try:
         data = response.json()
     except ValueError:
-        print('Not a valid json')
+        print('Not a valid JSON')
     else:
         if not data:
             print('No result')
