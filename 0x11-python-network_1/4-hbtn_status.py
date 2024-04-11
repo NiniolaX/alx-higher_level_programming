@@ -3,6 +3,7 @@
 This script fetches a URL using Python requests package.
 """
 
+
 import requests
 def fetchUrl(url):
     """ Fetches a given URL """
