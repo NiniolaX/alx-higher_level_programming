@@ -5,7 +5,7 @@ This script fetches a URL using Python requests package.
 import requests
 
 
-def fetchUrl(url):
+def fetch_url(url):
     """ Fetches a given URL """
     r = requests.get(url)
     print(f"Body response:\n\t- type: {type(r.text)}\n\t- content: {r.text}")
@@ -13,4 +13,4 @@ def fetchUrl(url):
 
 if __name__ == '__main__':
     url = 'https://alx-intranet.hbtn.io/status'
-    fetchUrl(url)
+    fetch_url(url)
