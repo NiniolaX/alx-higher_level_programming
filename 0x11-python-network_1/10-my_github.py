@@ -11,8 +11,7 @@ import requests
 def display_github_userid(user, passwd):
     """ Displays the id of a GitHub user using GitHub API"""
     url = 'https://api.github.com/user'
-    headers = {'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28'}
-    response = requests.get(url, headers=headers, auth=(user, passwd))
+    response = requests.get(url, auth=(user, passwd))
     user_data = response.json()
     print(user_data.get('id'))
 
