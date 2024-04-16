@@ -19,9 +19,9 @@ class Rectangle {
 
   rotate () {
     // Exchanges the width and height of the rectangle
-    const prev_height = this.height;
+    const prevHeight = this.height;
     this.height = this.width;
-    this.width = prev_height;
+    this.width = prevHeight;
   }
 
   double () {
