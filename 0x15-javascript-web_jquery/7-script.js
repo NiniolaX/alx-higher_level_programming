@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $.ajax({
-    url: https://swapi-api.alx-tools.com/api/people/5/?format=json,
+    url: 'https://swapi-api.alx-tools.com/api/people/5/?format=json',
     type: 'GET',
-    success: function(response) {
+    success: function (response) {
       $('#character').text(response.name);
-      },
-    error: function(error) {
+    },
+    error: function (error) {
       $('#character').text('Error fetching data: ' + error);
-      }
+    }
   });
 });
