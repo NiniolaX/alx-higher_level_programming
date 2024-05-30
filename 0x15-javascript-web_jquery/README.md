@@ -2,23 +2,6 @@
 This repository contains my code for the JavaScript Web jQuery project in the
 ALX Software Engineering Programme curriculum.
 
-## HTML code used
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Holberton School</title>
-  </head>
-  <body>
-    <header> 
-      First HTML page
-    </header>
-    <footer>
-      Holberton School - 2017
-    </footer>
-    <script type="text/javascript" src="0-script.js"></script>
-  </body>
-</html>
-
 ## Code files
 NB: All HTML files were provided in tasks
 1. 0-script.js Updates the text color of the <header> element to red
